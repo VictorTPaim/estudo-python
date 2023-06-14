@@ -1,6 +1,7 @@
 ''' crie uma função que recebe três números como parâmetro (n1, n2, n3)
 e retorna a soma dos números '''
 
+breakpoint()
 def somar(n1, n2, n3):
     return n1 + n2 + n3
 

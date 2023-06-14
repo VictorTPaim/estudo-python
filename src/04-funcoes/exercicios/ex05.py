@@ -3,6 +3,7 @@ crie uma calculadora em python que solicita ao usuário seu peso (Kg) e sua altu
 em qual classificação o indivíduo se encaixa. Além disso, o programa deve apresentar a situação 
 atual do indivíduo ('normal', 'perder peso', 'ganhar peso') com base na classificação Peso normal. '''
 
+breakpoint()
 def calcular_imc(individuo):
     return peso / (altura * altura)
 
