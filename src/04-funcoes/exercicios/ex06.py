@@ -1,7 +1,6 @@
 ''' Crie um programa em python que recebe como entrada o comprimento, 
 altura e a largura (cm) de um aquário e calcule as seguintes informações. '''
 
-breakpoint()
 def volume_litros(comprimento, altura, largura):
     return (comprimento * altura * largura) / 1000
 

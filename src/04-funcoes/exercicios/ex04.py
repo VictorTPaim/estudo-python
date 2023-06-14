@@ -1,7 +1,6 @@
 ''' crie uma função que recebe vários argumentos numéricos 
 através do *args retorna a soma dos números '''
 
-breakpoint()
 def somar(*args):
     soma = 0
     for i in args:

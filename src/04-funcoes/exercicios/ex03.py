@@ -1,7 +1,6 @@
 ''' crie uma função que recebe uma tupla de números como parâmetro (numeros)
 e retorna a soma dos números '''
 
-breakpoint()
 def somar(numeros):
     soma = 0
     for i in numeros:
