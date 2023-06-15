@@ -4,36 +4,33 @@ em qual classificação o indivíduo se encaixa. Além disso, o programa deve ap
 atual do indivíduo ('normal', 'perder peso', 'ganhar peso') com base na classificação Peso normal. '''
 
 def calcular_imc(individuo):
-    return peso / (altura * altura)
+    return individuo['peso'] / (individuo['altura'] * individuo['altura'])
 
 def obter_classificacao(imc):
     if imc < 18.5:
         return 'Baixo peso.'
-    elif imc <= 24.9:
+    if imc <= 24.9:
         return 'Peso Normal'
-    elif imc <= 29.9:
+    if imc <= 29.9:
         return 'Excesso de peso'
-    elif imc <= 34.9:
+    if imc <= 34.9:
         return 'Obesidade de classe 1'
-    elif imc <= 39.9:
+    if imc <= 39.9:
         return 'Obesidade de classe 2'
-    else:
-        return 'Obesidade de classe 3'
+    
+    return 'Obesidade de classe 3'
 
 def situacao_individuo(imc):
     if imc < 18.5:
         return 'Você deve ganhar peso.'
-    elif imc <= 24.9:
+    if imc <= 24.9:
         return 'Normal'
-    else:
-        return 'Perder peso'
-
-peso = float(input('Digite seu peso em quilos: '))
-altura = float(input('Digite sua altura em metros: '))
+    
+    return 'Perder peso'
 
 individuo = {
-    'peso': peso,
-    'altura': altura
+    'peso': float(input('Digite seu peso em quilos: ')),
+    'altura': float(input('Digite sua altura em metros: '))
 }
 
 imc = calcular_imc(individuo)

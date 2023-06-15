@@ -1,4 +1,4 @@
-""" Aula 03 - Diferença de *args e **kwargs """
+""" Aula 03 - Entendendo o uso de *args e **kwargs em funções e métodos """
 
 # *args
 def world_cup_titles(country, *args):
