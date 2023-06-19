@@ -63,4 +63,5 @@ print(
     retangulo2.base,
     retangulo2.altura,
     retangulo2.calcular_area(),
-    retangulo2.calcular_perimetro())
+    retangulo2.calcular_perimetro()
+)
