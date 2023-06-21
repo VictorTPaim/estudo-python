@@ -1,5 +1,5 @@
-''' crie uma classe Participacao que deve ter como atributos codigo, 
-data inicio, data fim, aluno e o projeto associado.  '''
+''' crie o atributo do tipo list participacoes na classe Projeto e implemente o 
+método add_participacaoque recebe como parâmetro um objeto Participação e adiciona na lista. '''
 
 class Aluno:
     def __init__(self, prontuario, nome, email):
@@ -61,6 +61,7 @@ class Projeto:
         self.codigo = codigo
         self.titulo = titulo
         self.responsavel = responsavel
+        self.participacoes = []
 
     @property
     def codigo(self):
@@ -92,6 +93,14 @@ class Projeto:
             raise ValueError('O responsável não pode ser vazio.')
         self._responsavel = value
 
+    def add_participacao(self, participacao):
+        self.participacoes.append(participacao)
+
+    def print_participacao(self):
+        print(self.codigo)
+        for participacao in self.participacoes:
+            print(participacao)
+
     @classmethod
     def from_string(cls, repr_projeto):
         codigo, titulo, responsavel = repr_projeto.split(sep=',')
@@ -109,7 +118,7 @@ class Projeto:
         return f'Projeto[codigo={self.codigo}, titulo={self.titulo}, responsavel={self.responsavel}]'
     
     def __repr__(self):
-        return f'{self.codigo},{self.titulo},{self.responsavel}]'
+        return f'Projeto[{self.codigo}, {self.titulo}, {self.responsavel}]'
 
 class Participacao:
     def __init__(self, codigo, data_inicio, data_fim, aluno, projeto):
@@ -164,8 +173,12 @@ class Participacao:
         return f'Participacao[codigo={self.codigo}, data inicio={self.data_inicio}, data fim={self.data_fim}, aluno={self.aluno}, projeto={self.projeto}]'
     
 aluno1 = Aluno('SP0101', 'João da Silva', 'joao@email.com')
+aluno2 = Aluno('SP0102', 'Maria da Silva', 'maria@email.com')
 projeto1 = Projeto(1, 'Laboratório de Desenvolvimento de Software', 'Pedro Gomes')
-participacao = Participacao(1, '05/06', '14/11', aluno1, projeto1)
-participacao2 = Participacao(2, '20/06', '20/12', aluno1, projeto1)
-print(participacao)
-print(participacao2)
+projeto2 = Projeto(2, 'Laboratório de Desenvolvimento de Software', 'João Augusto')
+participacao = Participacao(1, '05/06', '14/11', aluno1, projeto2)
+participacao2 = Participacao(2, '20/06', '20/12', aluno2, projeto2)
+projeto1.add_participacao(participacao)
+projeto1.add_participacao(participacao2)
+print(projeto1)
+projeto1.print_participacao()

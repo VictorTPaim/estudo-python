@@ -57,7 +57,7 @@ class Aluno:
         return f'Aluno[prontuario={self.prontuario}, nome={self.nome}, email={self.email}]'
     
     def __repr__(self):
-        return f'Aluno(prontuario={self.prontuario}, nome={self.nome}, email={self.email})'
+        return f'{self.prontuario},{self.nome},{self.email})'
     
 aluno1 = Aluno.from_string('SP0101,João da Silva,joao@email.com')
 aluno2 = Aluno('SP0102', 'João da Silva', 'joao@email.com')

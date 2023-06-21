@@ -17,7 +17,7 @@ class Projeto:
         
     @codigo.setter
     def codigo(self, value):
-        if value == 0:
+        if value <= 0:
             raise ValueError('O codigo não pode ser nulo.')
         self._codigo = value
 
@@ -58,7 +58,7 @@ class Projeto:
         return f'Projeto[codigo={self.codigo}, titulo={self.titulo}, responsavel={self.responsavel}]'
     
     def __repr__(self):
-        return f'Projeto[codigo={self.codigo}, titulo={self.titulo}, responsavel={self.responsavel}]'
+        return f'{self.codigo},{self.titulo},{self.responsavel}]'
         
 projeto1 = Projeto.from_string('1,Laboratório de Desenvolvimento de Software,Pedro Gomes')
 projeto2 = Projeto(2, 'Laboratório de Desenvolvimento de Software', 'Pedro Gomes')
