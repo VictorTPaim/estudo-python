@@ -14,5 +14,5 @@ def diminuir(n, taxa):
     return n * (1 - (taxa/100))
 
 
-def moeda(n, moeda='R$'):
-    return f'{moeda}{n:.2f}'.replace('.', ',')
+def moeda(n):
+    return f'R${n:.2f}'.replace('.', ',')
